@@ -33,22 +33,22 @@ app.use("/api/messages", messageRoute);
 // ------------------------------------Deployment---------------------------------------
 
 // Define the directory where the server script is located
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 
-if (process.env.NODE_ENV === 'production') {
-  // Serve static files from the 'client/dist' directory
-  app.use(express.static(path.join(__dirname,'..', 'client/dist')));
+// if (process.env.NODE_ENV === 'production') {
+//   // Serve static files from the 'client/dist' directory
+//   app.use(express.static(path.join(__dirname,'..', 'client/dist')));
 
-  // Serve the 'index.html' file for any route
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '..','client', 'dist', 'index.html'));
-  });
-} else {
-  // In development mode, respond with a message for the root route
-  app.get('/', (req, res) => {
-    res.send('API is running successfully');
-  });
-}
+//   // Serve the 'index.html' file for any route
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, '..','client', 'dist', 'index.html'));
+//   });
+// } else {
+//   // In development mode, respond with a message for the root route
+//   app.get('/', (req, res) => {
+//     res.send('API is running successfully');
+//   });
+// }
 
 // ------------------------------------Deployment---------------------------------------
 
